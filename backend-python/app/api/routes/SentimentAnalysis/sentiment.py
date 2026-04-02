@@ -14,6 +14,7 @@ async def sentiment(url: str):
         result = get_sentiment_agent(url)
         return result
     except Exception as e:
+        print(f"SENTIMENT ERROR: {type(e).__name__}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

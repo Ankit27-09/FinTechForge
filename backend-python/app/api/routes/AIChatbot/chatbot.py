@@ -9,4 +9,5 @@ async def sentiment(query: str):
         result = finance_chatbot(query)
         return result
     except Exception as e:
+        print(f"CHATBOT ERROR: {type(e).__name__}: {e}")
         raise HTTPException(status_code=500, detail=str(e))

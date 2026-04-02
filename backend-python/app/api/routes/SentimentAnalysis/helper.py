@@ -32,10 +32,9 @@ def get_sentiment_agent(url: str) -> SentimentAnalysisResult:
             "Make sure to remove any unnecessary information, such as ads or navigation links.",
             "Format your response using markdown."
         ],
-        response_model=SentimentAnalysisResult,
+        output_schema=SentimentAnalysisResult,
         structured_outputs=True,
-        model=model,
-        show_tool_calls=True
+        model=model
     )
 
     result = sentiment_agent.run(f"{url}")

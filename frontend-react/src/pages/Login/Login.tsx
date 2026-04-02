@@ -11,11 +11,15 @@ import { loginSchema, loginUser } from "@/validation/userSchema.ts";
 import SocialButtons from "@/components/Auth/SocialButtons";
 import { signIn } from "@/api/authService";
 import { parseApiError } from "@/lib/apiError";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/store/store";
+import { setAccessToken } from "@/store/auth/authSlice";
 
 type loginFields = loginUser;
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
 
   const {
     register,
@@ -30,6 +34,7 @@ const LoginForm: React.FC = () => {
       if (!response.data.isVerified) {
         navigate(`/verifymail?email=${data.email}`);
       } else {
+        dispatch(setAccessToken({ accessToken: response.data.accessToken, user: response.data.user }));
         navigate("/");
       }
     } catch (error) {

@@ -26,8 +26,8 @@ const VerificationStatus = () => {
         const response = await verifyUserEmail(verificationToken);
         if (response.data.success) {
           if (
-            response.data.code === "ALREADY_VERIFIED" ||
-            response.data.code === "VERIFIED"
+            response.data.Code === "ALREADY_VERIFIED" ||
+            response.data.Code === "VERIFIED"
           ) {
             setStatus("VERIFIED");
             setMessage(response.data.message);

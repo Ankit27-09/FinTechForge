@@ -35,11 +35,6 @@ const data = {
           icon: Newspaper,
         },
         {
-          title: "Currency Convertor",
-          url: "/dashboard/currencyconvertor",
-          icon: CreditCard
-        },
-        {
           title: "AI Assistant",
           url: "/dashboard/finance-chatbot",
           icon: MessageSquare
@@ -48,12 +43,7 @@ const data = {
           title: "Stock Analysis",
           url: "/dashboard/analysis",
           icon: AArrowUp
-        },
-        {
-          title: "Portfolio",
-          url: "/dashboard/portfolio",
-          icon: Briefcase
-        },
+        }
       ],
     },
     {

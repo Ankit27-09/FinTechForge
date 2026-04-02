@@ -80,6 +80,7 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       new InternalServerError('Unexpected error occurred while creating user')
     );
   } catch (err) {
+    console.error('SIGNUP ACTUAL ERROR:', err);
     logger.error('Failed to sign up user', { error: err });
     return next(new InternalServerError('Error while processing your request'));
   }
@@ -144,7 +145,7 @@ const signin = async (req: Request, res: Response, next: NextFunction) => {
       sameSite: 'strict',
     });
 
-    res.json({ accessToken, isVerified: true, success: true });
+    res.json({ accessToken, isVerified: true, success: true, user: user.username });
   } catch (error) {
     logger.error('Failed to sign in user', { error });
     return next(new InternalServerError('Error while processing your request'));
@@ -372,7 +373,13 @@ const refreshToken = async (
           return next(new ForbiddenError('User not found'));
         }
 
-        const { accessToken } = generateTokens(user.id);
+        const { accessToken, refreshToken: newRefreshToken } = generateTokens(user.id);
+
+        res.cookie('refreshToken', newRefreshToken, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === 'production',
+          sameSite: 'strict',
+        });
 
         res.json({ accessToken, user: user.username });
       }

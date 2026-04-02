@@ -18,7 +18,7 @@ def finance_chatbot(query: str):
         model=model,
         tools=[
             DuckDuckGoTools(),
-            YFinanceTools(enable_all=True)
+            YFinanceTools(all=True)
         ],
         instructions=[
             "Use DuckDuckGo for the latest financial news and market trends.",
@@ -27,9 +27,7 @@ def finance_chatbot(query: str):
             "Format financial data using tables for clarity.",
             "Use emojis and format overall response"
         ],
-        show_tool_calls=True,
         markdown=True,
-        add_history_to_messages=True,
         read_chat_history=True
     )
 
