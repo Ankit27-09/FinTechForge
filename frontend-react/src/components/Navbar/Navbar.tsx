@@ -79,6 +79,17 @@ const Navbar: React.FC = () => {
             <Link to="/" className={navLink}>Home</Link>
             <Link to="/dashboard" className={navLink}>Dashboard</Link>
             <Link to="/News" className={navLink}>News</Link>
+<<<<<<< HEAD
+=======
+            <Link to="/About" className={navLink}>About</Link>
+            <Link to="/Premium" className={navLink}>
+              Premium <Crown className="ml-1 h-4 w-4 text-yellow-500" />
+            </Link>
+            <Link to="/Pricing" className={navLink}>Pricing</Link>
+            <Link to="/Community" className={navLink}>Community</Link>
+            <Link to="/faq" className={navLink}>FAQ</Link>
+            <Link to="/feedback" className={navLink}>Feedback</Link>
+>>>>>>> 5b1ee9e4be8cf0c0b6e53d629a7c45a4efe68e43
           </div>
 
           {/* Auth actions (desktop) */}
@@ -127,6 +138,51 @@ const Navbar: React.FC = () => {
                     >
                       Home
                     </Link>
+<<<<<<< HEAD
+=======
+                    <Link 
+                      to="/Features" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      onClick={handleMobileNavigation}
+                    >
+                      Features
+                    </Link>
+                    <Link 
+                      to="/About" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                      onClick={handleMobileNavigation}
+                    >
+                      About
+                    </Link>
+                    <Link 
+                      to="/Premium" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center"
+                      onClick={handleMobileNavigation}
+                    >
+                      Premium <Crown className="ml-1 h-4 w-4 text-yellow-500" />
+                    </Link>
+                    <Link 
+                      to="/Pricing" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center"
+                      onClick={handleMobileNavigation}
+                    >
+                      Pricing
+                    </Link>
+                    <Link 
+                      to="/faq" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center"
+                      onClick={handleMobileNavigation}
+                    >
+                      FAQ
+                    </Link>
+                    <Link 
+                      to="/feedback" 
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center"
+                      onClick={handleMobileNavigation}
+                    >
+                      Feedback
+                    </Link>
+>>>>>>> 5b1ee9e4be8cf0c0b6e53d629a7c45a4efe68e43
                     <Link to="/Login" onClick={handleMobileNavigation}>
                       <Button variant="outline">Log In</Button>
                     </Link>

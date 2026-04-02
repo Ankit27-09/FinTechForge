@@ -18,12 +18,21 @@ import { AiChatbot } from "./pages/Dashboard/Chatbot";
 import EtfHeatmap from "./pages/Dashboard/MarketTrends/EtfHeatmap";
 import ForexHeatMap from "./pages/Dashboard/MarketTrends/ForexHeatmap";
 import StockPage from "./pages/Dashboard/StockPage";
+<<<<<<< HEAD
+=======
+import Portfolio from "./pages/Dashboard/Portfolio";
+import FinancialCalculator from "./pages/Dashboard/FinancialCalculator";
+>>>>>>> 5b1ee9e4be8cf0c0b6e53d629a7c45a4efe68e43
 import News from "./pages/News/News";
 
 import Profile from "./pages/Profile/Profile";
 import LoginForm from "./pages/Login/Login";
 import SignUpForm from "./pages/SignUp/SignUp";
 import NotFound from "./pages/NotFound/NotFound";
+import PasswordResetForm from "./pages/ForgotPassword/PasswordResetForm";
+import NearServices from "./pages/NearbyATM/NearServices";
+import FAQ from "./pages/FAQ/FAQ";
+import Feedback from "./pages/Feedback/Feedback";
 
 
 const mainLayoutRoutes = [
@@ -38,17 +47,23 @@ const mainLayoutRoutes = [
     index : true,
     element : <News/>
   },
-  /*
   {
     path: "/map",
     index: true,
     element: <NearServices />,
   },
-  */
 
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/faq",
+    element: <FAQ />,
+  },
+  {
+    path: "/feedback",
+    element: <Feedback />,
   },
 ];
 
@@ -93,6 +108,19 @@ const dashboardLayoutRoutes = [
     index: true,
     element: <ForexHeatMap />,
   },
+<<<<<<< HEAD
+=======
+  {
+    path: "portfolio",
+    index: true,
+    element: <Portfolio />,
+  },
+  {
+    path: "financial-calculator",
+    index: true,
+    element: <FinancialCalculator />,
+  },
+>>>>>>> 5b1ee9e4be8cf0c0b6e53d629a7c45a4efe68e43
 ];
 
 // Create the router with routes
@@ -142,10 +170,10 @@ const router = createBrowserRouter([
         path: "/forgot-password",
         element: <ForgotPassword />,
       },
-      /*{
+      {
         path: "/reset-password/:resetToken",
         element: <PasswordResetForm />,
-      }*/
+      },
       {
         path: "*",
         element: <NotFound />,

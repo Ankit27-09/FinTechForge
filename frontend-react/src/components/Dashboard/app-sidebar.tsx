@@ -43,7 +43,21 @@ const data = {
           title: "Stock Analysis",
           url: "/dashboard/analysis",
           icon: AArrowUp
+<<<<<<< HEAD
         }
+=======
+        },
+        {
+          title: "Portfolio",
+          url: "/dashboard/portfolio",
+          icon: Briefcase
+        },
+        {
+          title: "Financial Calculator",
+          url: "/dashboard/financial-calculator",
+          icon: BarChart3Icon
+        },
+>>>>>>> 5b1ee9e4be8cf0c0b6e53d629a7c45a4efe68e43
       ],
     },
     {
